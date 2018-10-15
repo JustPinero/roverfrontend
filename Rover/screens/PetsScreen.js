@@ -6,7 +6,7 @@ export default class PetsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: cards,
+      cards: [],
       outOfCards: false
     }
   }
