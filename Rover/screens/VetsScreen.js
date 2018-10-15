@@ -30,7 +30,7 @@ export default class VetsScreen extends React.Component {
     return (
       <ScrollView>
         <Text>
-          This is where the pet card will go.
+          This is where the vet cards will go.
         </Text>;
       </ScrollView>
       )

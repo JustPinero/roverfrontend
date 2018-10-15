@@ -18,7 +18,7 @@ export default class PetsScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
       <Text>
-        Pets Screen
+        This is where the pet cards will go.
       </Text>
       </ScrollView>
     );
