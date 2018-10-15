@@ -7,9 +7,10 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import SplashPageImg from "../assets/images/splashPageImg.jpg"
 
 import { MonoText } from '../components/StyledText';
 
@@ -25,12 +26,9 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
+              source={SplashPageImg
               }
-              style={styles.welcomeImage}
+              style={styles.logo}
             />
             <Text>
               Welcome to Rover!

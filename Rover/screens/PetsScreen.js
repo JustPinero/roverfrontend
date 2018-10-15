@@ -3,6 +3,13 @@ import { Text, ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 export default class PetsScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: cards,
+      outOfCards: false
+    }
+  }
   static navigationOptions = {
     title: 'PETS',
   };

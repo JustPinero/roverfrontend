@@ -10,19 +10,28 @@ import {
   Dimensions
 } from 'react-native';
 
+import SwipeCard from "../components/SwipeCard";
+
 export default class VetsScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: [],
+      outOfCards: false
+    }
+  }
   static navigationOptions = {
     title: 'VETS',
   };
-
+  
   render() {
     /* Go ahead and delete ExpoConfigView and replace it with your
      * content, we just wanted to give you a quick view of your config */
     return (
       <ScrollView>
-      <Text>
-        Vets Screen
-      </Text>;
+        <Text>
+          This is where the pet card will go.
+        </Text>;
       </ScrollView>
       )
   }
