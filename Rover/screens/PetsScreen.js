@@ -20,10 +20,10 @@ export default class PetsScreen extends React.Component {
   render() {
 
     const petCards = [
-      {name: 'Pixel', image: '../assets/images/sampleImg.jpg'},
-      {name: 'Betty', image: '../assets/images/sampleImg2.jpg'},
-      {name: 'Louie', image: '../assets/images/sampleImg3.jpg'},
-      {name: 'Lily', image: '../assets/images/sampleImg4.jpg'},
+      {name: 'Pixel', image: '../assets/images/sampleImg.jpg', bio: "Pixel is a quarter werewolf."},
+      {name: 'Betty', image: '../assets/images/sampleImg2.jpg', bio: "Betty is a Fullbright scholar."},
+      {name: 'Louie', image: '../assets/images/sampleImg3.jpg', bio: "Louie has retractable eyes"},
+      {name: 'Lily', image: '../assets/images/sampleImg4.jpg', bio: "Lily currently works at the UN."},
     ];
 
     return (

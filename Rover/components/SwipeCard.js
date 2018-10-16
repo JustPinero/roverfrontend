@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 
 import SwipeCards from 'react-native-swipe-cards';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class Card extends React.Component {
   constructor(props) {
@@ -17,6 +18,9 @@ class Card extends React.Component {
      <View style={styles.card}>
         <Image style={styles.thumbnail} source={{uri: this.props.image}} />
         <Text style={styles.text}>{this.props.name}</Text>
+        <ScrollView>
+          <Text>{this.props.bio|| ""}</Text>
+        </ScrollView>
      </View>
     )
   }
