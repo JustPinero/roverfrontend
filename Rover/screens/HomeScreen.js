@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   logo: {
     width: (width*.768),
     height:(height*.154),
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   taglinebox:{
     alignItems: 'center',

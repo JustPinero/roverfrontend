@@ -25,13 +25,15 @@ export default class VetsScreen extends React.Component {
   };
   
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
+    const vetCards= [
+      {name: "Dr. Red", image:""},
+      {name: "Dr. Orange", image: ""},
+      {name: "Dr. Blue", image: ""},
+     { name: "Dr. Green", image:""}
+    ]
     return (
       <ScrollView>
-        <Text>
-          This is where the vet cards will go.
-        </Text>;
+        <SwipeCard cards={vetCards}/>
       </ScrollView>
       )
   }

@@ -2,6 +2,9 @@ import React from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
+import SwipeCard from "../components/SwipeCard";
+
+
 export default class PetsScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -15,11 +18,17 @@ export default class PetsScreen extends React.Component {
   };
 
   render() {
+
+    const petCards = [
+      {name: 'Pixel', image: '../assets/images/sampleImg.jpg'},
+      {name: 'Betty', image: '../assets/images/sampleImg2.jpg'},
+      {name: 'Louie', image: '../assets/images/sampleImg3.jpg'},
+      {name: 'Lily', image: '../assets/images/sampleImg4.jpg'},
+    ];
+
     return (
       <ScrollView style={styles.container}>
-      <Text>
-        This is where the pet cards will go.
-      </Text>
+        <SwipeCard cards={petCards}/>
       </ScrollView>
     );
   }
