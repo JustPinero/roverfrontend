@@ -26,15 +26,27 @@ export default class VetsScreen extends React.Component {
   
   render() {
     const vetCards= [
-      {name: "Dr. Red", image:""},
-      {name: "Dr. Orange", image: ""},
-      {name: "Dr. Blue", image: ""},
-     { name: "Dr. Green", image:""}
-    ]
+      {name: "Dr. Red", image: '../assets/images/sampleVetImg.jpg', bio: "Red never gives up."},
+      {name: "Dr. Orange", image: '../assets/images/sampleVetImg2.jpg', bio: "Dr. is a Fullbright scholar."},
+      {name: "Dr. Blue", image: '../assets/images/sampleVetImg3.jpg', bio: "Dr. Blue Will save us all."},
+     { name: "Dr. Green", image: '../assets/images/sampleVetImg4.jpg', bio: "Dr. Green is from Long Island."}
+    ];
+    
     return (
-      <ScrollView>
-        <SwipeCard cards={vetCards}/>
-      </ScrollView>
+      <View style={styles.screen}>
+        <ScrollView>
+          <SwipeCard cards={vetCards}/>
+        </ScrollView>
+      </View>
       )
   }
 }
+
+var {height, width} = Dimensions.get('window');
+
+const styles = StyleSheet.create({
+  screen:{
+    width: width,
+    height: height,
+  },
+});

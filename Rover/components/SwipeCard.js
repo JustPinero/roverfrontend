@@ -2,7 +2,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 
 import SwipeCards from 'react-native-swipe-cards';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -14,13 +14,18 @@ class Card extends React.Component {
 
   render() {
       var imageUrl = this.props.image;
+      console.log("CHICKEN FOOOOOOOT", "../assets/images/sampleVetImg4.jpg")
     return (
      <View style={styles.card}>
-        <Image style={styles.thumbnail} source={{uri: this.props.image}} />
+     <Image style={styles.thumbnail} source={{uri: "../assets/images/sampleVetImg4.jpg"}} />
+      <View>
+      </View>
         <Text style={styles.text}>{this.props.name}</Text>
-        <ScrollView>
-          <Text>{this.props.bio|| ""}</Text>
-        </ScrollView>
+        <View>
+          <ScrollView>
+            <Text>{this.props.bio|| ""}</Text>
+          </ScrollView>
+        </View>
      </View>
     )
   }
@@ -64,6 +69,9 @@ export default class extends React.Component {
   handleMaybe (card) {
     console.log(`Maybe for ${card.text}`)
   }
+  showYup=false;
+  showNope=false;
+  showMaybe=false;
   render() {
     // If you want a stack of cards instead of one-per-one view, activate stack mode
     // stack={true}
@@ -81,20 +89,23 @@ export default class extends React.Component {
     )
   }
 }
-
+var {height, width} = Dimensions.get('window');
 const styles = StyleSheet.create({
     card: {
         alignItems: 'center',
         borderRadius: 5,
-        overflow: 'hidden',
         borderColor: 'grey',
         backgroundColor: 'white',
         borderWidth: 1,
         elevation: 1,
+        width: (width*.97),
+        height:(height)
       },
       thumbnail: {
-        width: 300,
-        height: 300,
+        width: (width*.97),
+        height:(height*.23),
+        borderWidth: 2,
+        resizeMode: 'cover'
       },
       text: {
         fontSize: 20,
