@@ -17,7 +17,7 @@ class Card extends React.Component {
       console.log("CHICKEN FOOOOOOOT", "../assets/images/sampleVetImg4.jpg")
     return (
      <View style={styles.card}>
-     <Image style={styles.thumbnail} source={{uri: "../assets/images/sampleVetImg4.jpg"}} />
+     <Image style={styles.thumbnail} source={{uri: "../assets/images/sampleVetImg1.jpg"}} />
       <View>
       </View>
         <Text style={styles.text}>{this.props.name}</Text>
@@ -77,6 +77,7 @@ export default class extends React.Component {
     // stack={true}
     return (
       <SwipeCards
+        style={{flex: 1}}
         cards={this.state.cards}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
@@ -96,16 +97,19 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: 'grey',
         backgroundColor: 'white',
+        overflow: "hidden",
         borderWidth: 1,
         elevation: 1,
         width: (width*.97),
         height:(height)
       },
       thumbnail: {
-        width: (width*.97),
-        height:(height*.23),
+        width: 300,
+        height: 300,
         borderWidth: 2,
-        resizeMode: 'cover'
+        resizeMode: "cover",
+        backgroundColor:'#fcb248',
+        zIndex: 1
       },
       text: {
         fontSize: 20,

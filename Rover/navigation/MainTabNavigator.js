@@ -1,6 +1,6 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator, Button } from 'react-navigation';
+import { Platform, Button } from 'react-native';
+import { createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
@@ -12,13 +12,6 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  headerRight: (
-    <Button
-      onPress={() => alert('This is a button!')}
-      title="Info"
-      color="#fff"
-    />
-    ),
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon

@@ -7,7 +7,8 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Dimensions
+  Dimensions,
+  Button
 } from 'react-native';
 
 import SwipeCard from "../components/SwipeCard";
@@ -20,9 +21,20 @@ export default class VetsScreen extends React.Component {
       outOfCards: false
     }
   }
-  static navigationOptions = {
-    title: 'VETS',
-  };
+  static navigationOptions = ({ navigation }) => {
+    return(
+      {
+        title: 'VETS',
+        headerRight: (
+          <Button
+          onPress={() => alert('This is a button!')}
+          title="Matches"
+          color="black"
+        />
+        )
+      }
+    )
+  }
   
   render() {
     const vetCards= [

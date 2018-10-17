@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ScrollView, StyleSheet, View, Dimensions } from 'react-native';
+import { Text, ScrollView, StyleSheet, View, Dimensions, Button } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 import SwipeCard from "../components/SwipeCard";
@@ -13,9 +13,20 @@ export default class PetsScreen extends React.Component {
       outOfCards: false
     }
   }
-  static navigationOptions = {
-    title: 'PETS',
-  };
+  static navigationOptions = ({ navigation }) => {
+      return(
+        {
+          title: 'PETS',
+          headerRight: (
+            <Button
+            onPress={() => alert('This is a button!')}
+            title="Matches"
+            color="black"
+          />
+          )
+        }
+      )
+    }
 
   render() {
 
