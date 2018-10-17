@@ -7,22 +7,22 @@ import {
   REMOVE_VET
 } from '../actions/types';
 
-export default function reducer(VETS = [], action) {
+export default function reducer(vets = [], action) {
   console.log(action);
     switch (action.type) {
       case SELECT_VET:
-        return {selectedGroup: action.payload};
+        return {selectedVet: action.payload};
     case GET_VETS:
-        return action.VETS;
+        return [...action.vets];
     case CREATE_VET:
-        return [action.pet, ...VETS];
+        return [action.pet, ...vets];
 
     case REMOVE_VET:
-        return VETS.filter(pet => pet.id !== action.id);
+        return vets.filter(pet => vet.id !== action.id);
 
     case UPDATE_VETS:
-        return [...VETS, action.payload];
+        return [...vets, action.payload];
     default:
-        return VETS;
+        return vets;
       }
 }

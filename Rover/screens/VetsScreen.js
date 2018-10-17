@@ -10,10 +10,12 @@ import {
   Dimensions,
   Button
 } from 'react-native';
+import {fetchVets} from "../actions/vets";
+import {connect} from 'react-redux';
 
 import SwipeCard from "../components/SwipeCard";
 
-export default class VetsScreen extends React.Component {
+class VetsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,22 +37,40 @@ export default class VetsScreen extends React.Component {
       }
     )
   }
+
+  componentWillMount(){
+    console.log('Vet Data mounting')
+    this.props.fetchInitialData();
+  }
   
   render() {
-    const vetCards= [
-      {name: "Dr. Red", image: '../assets/images/sampleVetImg.jpg', bio: "Red never gives up."},
-      {name: "Dr. Orange", image: '../assets/images/sampleVetImg2.jpg', bio: "Dr. is a Fullbright scholar."},
-      {name: "Dr. Blue", image: '../assets/images/sampleVetImg3.jpg', bio: "Dr. Blue Will save us all."},
-     { name: "Dr. Green", image: '../assets/images/sampleVetImg4.jpg', bio: "Dr. Green is from Long Island."}
-    ];
-    
+    //Dummy Data
+    // const vetCards= [
+    //   {name: "Dr. Red", image: '../assets/images/sampleVetImg.jpg', bio: "Red never gives up."},
+    //   {name: "Dr. Orange", image: '../assets/images/sampleVetImg2.jpg', bio: "Dr. is a Fullbright scholar."},
+    //   {name: "Dr. Blue", image: '../assets/images/sampleVetImg3.jpg', bio: "Dr. Blue Will save us all."},
+    //  { name: "Dr. Green", image: '../assets/images/sampleVetImg4.jpg', bio: "Dr. Green is from Long Island."}
+    // ];
+
+    const CardStack = ()=> {
+      if(this.props.vets){
+        return(
+          <SwipeCard cards={this.props.vets}/>
+        )
+      }else{
+        return(
+          <View/>
+        )
+      }
+    }
+
     return (
       <View style={styles.screen}>
-        <ScrollView>
-          <SwipeCard cards={vetCards}/>
+        <ScrollView style={styles.container}>
+          <CardStack/>
         </ScrollView>
       </View>
-      )
+    );
   }
 }
 
@@ -62,3 +82,15 @@ const styles = StyleSheet.create({
     height: height,
   },
 });
+
+const mapStateToProps =(state) => ({
+  vets: state.vets,
+});
+
+const mapDispatchToProps= (dispatch)=> ({
+  fetchInitialData:()=>{
+    dispatch(fetchVets());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(VetsScreen);

@@ -20,7 +20,7 @@ export const updatePets= (pets)=>{
   return {type:UPDATE_PETS, payload:pets };
 };
 export const fetchPets = () => dispatch => {
-    axios.get('http://localhost:1337/rover/pets')
+    axios.get('http://localhost:1337/api/pets')
         .then(res => dispatch(getAll(res.data)))
         .catch(err => console.error('Fetching pets unsuccessful', err));
 };

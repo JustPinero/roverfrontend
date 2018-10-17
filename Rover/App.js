@@ -23,10 +23,12 @@ export default class App extends React.Component {
     } else {
       //THE PROVIDER TAG WILL ENCLOSE THE APP TO GIVE THE APP ACCESS TO THE REDUX STORE WHEN THE BACKEND IS CONNECTED
       return (
+        <Provider store={store}>
           <View style={styles.container}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
             <AppNavigator />
           </View>
+        </Provider>
       );
     }
   }

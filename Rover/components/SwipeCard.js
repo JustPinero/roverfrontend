@@ -17,10 +17,11 @@ class Card extends React.Component {
       console.log("CHICKEN FOOOOOOOT", "../assets/images/sampleVetImg4.jpg")
     return (
      <View style={styles.card}>
-     <Image style={styles.thumbnail} source={{uri: "../assets/images/sampleVetImg1.jpg"}} />
+     <Image style={styles.thumbnail} source={{uri: this.props.photo}} />
       <View>
       </View>
-        <Text style={styles.text}>{this.props.name}</Text>
+        <Text style={styles.text}>{this.props.name || this.props.fullName}</Text>
+        <Text style={styles.text}>{this.props.email || ""}</Text>
         <View>
           <ScrollView>
             <Text>{this.props.bio|| ""}</Text>

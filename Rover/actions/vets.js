@@ -20,7 +20,7 @@ export const updateVets= (vets)=>{
   return {type:UPDATE_VETS, payload:vets };
 };
 export const fetchVets = () => dispatch => {
-    axios.get('http://localhost:1337/rover/vets')
+    axios.get('http://localhost:1337/api/vets')
         .then(res => dispatch(getAll(res.data)))
         .catch(err => console.error('Fetching vets unsuccessful', err));
 };
